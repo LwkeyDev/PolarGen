@@ -1,6 +1,17 @@
 # PolarGen
 This tool is made for generating fake info.  It can generate valid credit card numbers, CVV, experation date, and it can generate fake names, addresses, phone numbers, emails, and even jobs.  You can also use this tool to check if the credit card numbers generated are valid, by using the Credit Card Validator.  After you have generate info, you can then choose to save the info in a txt file which you can access later.  The way the Credit Card Generator works is by using Luhn's algorithim.  By creating a string of numbers that follow this algorithim, we can make credit card numbers that can pass validation.  Unfortunately, these credit cards do not hold any real money, however could pottentialy be used for free trials as they pass as real credit cards.  
 
+<p align = "center">
+  <img src = "https://img.shields.io/github/stars/LwkeyDev/PolarGen">
+  <img src = "https://img.shields.io/github/forks/LwkeyDev/PolarGen">
+  <img src = "https://img.shields.io/badge/Maintained%3F-yes-green.svg">
+  <img src = "https://img.shields.io/github/license/LwkeyDev/PolarGen">
+  <img src = "https://img.shields.io/github/repo-size/LwkeyDev/PolarGen">
+  <img src= "https://img.shields.io/github/languages/count/LwkeyDev/PolarGen">
+  <img src = "https://visitor-badge.laobi.icu/badge?page_id=LwkeyDev.PolarGen">
+</p>
+
+
 # Disclaimer:  
 Using it for the purpose of paying to a place/organization that is not yours is illegal, and should not be done under any circumstances.  The main reason I put it into this tool was for educational purposes, and so that people could test the security of their own websites and buisnesses.  We are not responsible for anything you choose to do with this tool, and any trouble you may get into.  
 
