@@ -1,6 +1,6 @@
-#PolarGen
+# PolarGen
 
-#Windows Install:
+# Windows Install:
 Download the zip
 Extract the zip files
 Open the extracted folder in terminal
