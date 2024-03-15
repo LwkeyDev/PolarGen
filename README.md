@@ -6,9 +6,9 @@ Extract the zip files
 Open the extracted folder in terminal
 Then run
 
-'''
+```
 pip install -r req.txt
-'''
+```
 
 git clone https://github.com/LwkeyDev/PolarGen.git
 
