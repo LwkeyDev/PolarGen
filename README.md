@@ -5,6 +5,7 @@ Download the zip
 Extract the zip files
 Open the extracted folder in terminal
 Then run
+
 '''
 pip install -r req.txt
 '''
