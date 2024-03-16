@@ -1,5 +1,5 @@
 <p align=center>
-  <img src='images/PolarGen.png'>
+  <img src='images/PolarGenBanner.png'>
 </p>
   
 ```
