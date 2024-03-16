@@ -35,7 +35,7 @@ An open source information generator!
 <br>
 
 #  SCREENSHOT
-![Screenshot 2024-03-14 225507](https://github.com/LwkeyDev/PolarGen/assets/95990372/e1507e04-8529-4fa3-962e-a0955500bf65)
+<img src='images/PolarGen_v1.1.7.png'>
 
 <br>
 
