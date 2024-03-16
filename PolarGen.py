@@ -31,15 +31,15 @@ banner = '''
                    [to do with this tool, and any trouble you may get into.                ]
                     
 '''
-
+#Note: The save system to the folders is still a biit buggy, I am currently testing better ways to save the info to a folder
 def clear_screen():
-    print("\033[H\033[J")  
+    print("\033[H\033[J")  #Kinda buggy rn cause it is not a full screen clear but I am working on a better option
 
 def print_banner():
     clear_screen()
     print(banner)
 
-def create_folders():
+def folders():
     if not os.path.exists('credit_card_info'):
         os.makedirs('credit_card_info')
     if not os.path.exists('fake_personal_info'):
@@ -47,7 +47,7 @@ def create_folders():
     if not os.path.exists('fake_company_info'):
         os.makedirs('fake_company_info')
 
-def generate_card():
+def gen_card():
     print_banner()
     print("Credit Card Generator\n")
     print("[1] MasterCard")
@@ -80,7 +80,7 @@ def generate_card():
         return
     else:
         input("Invalid choice. Press Enter to continue...")
-        generate_card()
+        gen_card()
 
     print(card_info)
 
@@ -121,7 +121,7 @@ def company_info():
     input("\nPress Enter to continue...")
 def menu():
     print_banner()
-    create_folders()
+    folders()
     while True:
         print_banner()
         print("[1] Generate Credit Card")
@@ -134,11 +134,11 @@ def menu():
         choice = input("\nSelect an option: ")
 
         if choice == '1':
-            generate_card()
+            gen_card()
         elif choice == '2':
-            generate_fake_info()
+            fake_info()
         elif choice == '3':
-            validate_card_number()
+            validate_card()
         elif choice == '4':
             company_info()
         elif choice == '5':
@@ -150,7 +150,7 @@ def menu():
         else:
             input("Invalid choice. Press Enter to continue...")
 
-def generate_fake_info():
+def fake_info():
     print_banner()
     print("Generated Fake Personal Information:\n")
     name = fake.name()
@@ -168,7 +168,7 @@ def generate_fake_info():
         print(f"Fake personal information saved to '{filename}'")
     input("\nPress Enter to continue...")
 
-def validate_card_number():
+def validate_card():
     print_banner()
     card_number = input("Enter Credit Card Number: ")
     if not any(char.isdigit() for char in card_number):
