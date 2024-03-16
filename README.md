@@ -56,7 +56,7 @@ pip install -r req.txt
 ```
 __Once the requirements have been installed, simply close out of terminal and double click the `PolarGen.BAT` file__  
 
-# Linux/Mac install
+# :heavy_check_mark: Linux/Mac install:
 -__First, make sure you have `pip` installed__  
 -Then, go into terminal, and type
 ```
