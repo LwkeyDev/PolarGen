@@ -79,7 +79,7 @@ python3 PolarGen.py
 ```
 - `PolarGen` is back with all new features and user interface
 - `v1.1.7` has tools with no _api key_ requirement
-__Please read Disclaimer before use__
+-Please read Disclaimer before use
 ```
 
 </p>
