@@ -20,7 +20,7 @@ banner = '''
                              _|    \___/  _| \__,_| _|    \____| \___| _|  _| 
                                                                                                                
                                            {Author: Lwkey}
-                                           {Version: 1.1.7}
+                                           {Version: 1.7.9}
                         
                    [Disclaimer: This tool is for educational purposes only, the credit card]
                    [generator does not generate cards with money on them, and instead,     ]
@@ -221,15 +221,33 @@ def validate_credit_card():
 def help_menu():
     print_banner()
     print("PolarGen help\n")
-    print("This toolbox allows you to:")
+    print("This script allows you to:")
     print("- Generate fake credit card numbers")
     print("- Generate fake personal information")
     print("- Validate credit card numbers")
     print("- Generate fake company information")
     print("- Save generated information to a file")
-    print("\nUse the provided options to navigate the toolbox.")
     print("\nFeel free to leave any suggestions, issues, questions, etc on the issues tab of https://github.com/LwkeyDev/PolarGen")
-    input("\nPress Enter to continue...")
+    choice = input("\nType would you like to know more about how the generators work (y/n): ")
+    if choice == 'y' or 'yes' or 'Yes' or 'Y' or 'YES' or 'Ya':
+        clear_screen()
+        print("\nFor generating fake credit card numbers, the script uses an algorithim called Luhns Algorithm.")
+        time.sleep(.5)
+        print("\nThis is the same algorithim used to generate real credit card numbers.")
+        time.sleep(.4)
+        print("For the CVV/CVC, the script simply picks 3 random numbers in the correct ranges to be valid")
+        time.sleep(.5)
+        print("For generating names, experation dates, jobs, etc, the script simply goes through a list of names, jobs, etc")
+        time.sleep(.3)
+        print("While the generated cards do not actually have any money on them, they could pass as a real credit card for a free trial")
+        time.sleep(.5)
+        print("Using it for paying for free trials, or other things that are not yours is illegal")
+        print("We are not responsible for any harm you or others may cause themselves. ")
+        time.sleep(3)
+        input("\nPress Enter to continue...")
+
+    else:
+        input("\nPress Enter to continue...")
 def credits():
     print("Credits:\n")
     print("Created by Lwkey")
