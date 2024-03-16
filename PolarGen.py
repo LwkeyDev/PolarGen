@@ -107,9 +107,13 @@ def company_info():
     company_slogen = fake.bs()
 
     print("Company Name:", company_name)
+    time.sleep(.4)
     print("Company Job:", company_job)
+    time.sleep(.3)
     print("Company Address:", company_address)
+    time.sleep(.2)
     print("Company Email:", company_email)
+    time.sleep(.4)
     print("Company Slogen:", company_slogen)
 
     save_option = input("\nDo you want to save this company information? (y/n): ").lower() #Was on a time crunch for the save to folder part so I ended up using chatgpt  to fix the errors which is why it may be buggy
@@ -159,7 +163,9 @@ def fake_info():
     address = fake.address()
     email = fake.email()
     print("Name:", name)
+    time.sleep(.4)
     print("Address:", address)
+    time.sleep(.2)
     print("Email:", email)
     save_option = input("\nDo you want to save this fake personal information? (y/n): ").lower()#Was on a time crunch for the save to folder part so I ended up using chatgpt  to fix the errors which is why it may be buggy
     if save_option == 'y':
@@ -201,7 +207,9 @@ def validate_credit_card():
         validation_result = "The Credit Card Number is Invalid"    
     Card_Type = identify_card_type(formated_number)
     print("\n Validation Result:", validation_result)
+    time.sleep(.2)
     print("\n Card Type:", Card_Type)
+    time.sleep(1)
     input("\nPress Enter to continue...")
 
 def help_menu():
