@@ -4,6 +4,7 @@ from card_identifier.cardutils import validate_card
 import sys
 from card_identifier.cardutils import format_card
 from card_identifier.card_type import identify_card_type
+import time
 
 
 
@@ -58,22 +59,21 @@ def gen_card():
     
     choice = input("\nChoose a card type or enter '5' to go back: ")
     
-    card_type = ""
     
     if choice == '1':
-        card_type = "MasterCard"
+        loading()
         card_info = fake.credit_card_full(card_type="mastercard") 
     
     elif choice == '2':
-        card_type = "Visa"
+        loading()
         card_info = fake.credit_card_full(card_type="visa")
     
     elif choice == '3':
-        card_type = "Discover"
+        loading()
         card_info = fake.credit_card_full(card_type="discover")   
     
     elif choice == '4':
-        card_type = "Amex"
+        loading()
         card_info = fake.credit_card_full(card_type="amex")
     
     elif choice == '5':
@@ -98,6 +98,7 @@ def gen_card():
 
 def company_info():
     print_banner()
+    loading()
     print("Company Information:\n")
     company_name = fake.company()
     company_address = fake.address()
@@ -138,7 +139,7 @@ def menu():
         elif choice == '2':
             fake_info()
         elif choice == '3':
-            validate_card()
+            validate_credit_card()
         elif choice == '4':
             company_info()
         elif choice == '5':
@@ -152,6 +153,7 @@ def menu():
 
 def fake_info():
     print_banner()
+    loading()
     print("Generated Fake Personal Information:\n")
     name = fake.name()
     address = fake.address()
@@ -168,7 +170,22 @@ def fake_info():
         print(f"Fake personal information saved to '{filename}'")
     input("\nPress Enter to continue...")
 
-def validate_card():
+
+def loading():#FYI this part is completely useless, I just added it cause it looked weird instantly printing the result, you can remove it if you would like, just make sure to remove iit from the generators too.  
+    print("\n█▒▒▒▒▒▒▒▒▒10%")
+    time.sleep(.5)
+    clear_screen()
+    print("\n████▒▒▒▒▒▒30%")
+    time.sleep(.6)
+    clear_screen()
+    print("\n████████▒▒80%")
+    time.sleep(.4)
+    clear_screen()
+    print("██████████100%")
+    time.sleep(.5)
+    clear_screen()
+    print_banner()
+def validate_credit_card():
     print_banner()
     card_number = input("Enter Credit Card Number: ")
     if not any(char.isdigit() for char in card_number):
