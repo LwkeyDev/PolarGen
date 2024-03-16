@@ -228,8 +228,8 @@ def help_menu():
     print("- Generate fake company information")
     print("- Save generated information to a file")
     print("\nFeel free to leave any suggestions, issues, questions, etc on the issues tab of https://github.com/LwkeyDev/PolarGen")
-    choice = input("\nType would you like to know more about how the generators work (y/n): ")
-    if choice == 'y' or 'yes' or 'Yes' or 'Y' or 'YES' or 'Ya':
+    choice = input("\nType would you like to know more about how the generators work (y/n): ").lower()
+    if choice == 'y' or 'yes' or 'ya':
         clear_screen()
         print("\nFor generating fake credit card numbers, the script uses an algorithim called Luhns Algorithm.")
         time.sleep(.5)
