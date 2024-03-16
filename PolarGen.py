@@ -5,7 +5,7 @@ import sys
 from card_identifier.cardutils import format_card
 from card_identifier.card_type import identify_card_type
 import time
-
+from pystyle import Add, Center, Colors, Colorate, Write, System
 
 
 
