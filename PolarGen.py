@@ -31,7 +31,7 @@ banner = '''
                    [to do with this tool, and any trouble you may get into.                ]
                     
 '''
-#Note: The save system to the folders is still a biit buggy, I am currently testing better ways to save the info to a folder
+
 def clear_screen():
     print("\033[H\033[J")  #Kinda buggy rn cause it is not a full screen clear but I am working on a better option
 
@@ -84,7 +84,7 @@ def gen_card():
 
     print(card_info)
 
-    save_option = input("\nDo you want to save this card information? (y/n): ").lower()
+    save_option = input("\nDo you want to save this card information? (y/n): ").lower()#Was on a time crunch for the save to folder part so I ended up using chatgpt  to fix the errors which is why it may be buggy
     if save_option == 'y':
         file_choice = input("\nWhat do you want to name the file: ")
         filename = os.path.join('credit_card_info', f'{file_choice}.txt')
@@ -111,7 +111,7 @@ def company_info():
     print("Company Email:", company_email)
     print("Company Slogen:", company_slogen)
 
-    save_option = input("\nDo you want to save this company information? (y/n): ").lower()
+    save_option = input("\nDo you want to save this company information? (y/n): ").lower() #Was on a time crunch for the save to folder part so I ended up using chatgpt  to fix the errors which is why it may be buggy
     if save_option == 'y':
         file_choice = input("\nWhat do you want to name the file: ")
         filename = os.path.join('fake_company_info', f'{file_choice}.txt')
@@ -159,7 +159,7 @@ def fake_info():
     print("Name:", name)
     print("Address:", address)
     print("Email:", email)
-    save_option = input("\nDo you want to save this fake personal information? (y/n): ").lower()
+    save_option = input("\nDo you want to save this fake personal information? (y/n): ").lower()#Was on a time crunch for the save to folder part so I ended up using chatgpt  to fix the errors which is why it may be buggy
     if save_option == 'y':
         file_choice = input("\nWhat do you want to name the file: ")
         filename = os.path.join('fake_personal_info', f'{file_choice}.txt')
