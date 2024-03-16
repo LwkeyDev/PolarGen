@@ -13,6 +13,10 @@ An open source information generator!
   <img src = "https://visitor-badge.laobi.icu/badge?page_id=LwkeyDev.PolarGen">
   <img src="https://img.shields.io/badge/Disclaimer-This tool is for educational purposes only-red.svg?logo=hackaday">
   <img src="https://img.shields.io/badge/Python-3-blue.svg?style=flat&logo=python">
+  <img src=
+"https://img.shields.io/badge/Ethical_Hacking-green.svg">
+
+
 </p>
 
 <br>
