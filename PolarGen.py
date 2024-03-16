@@ -155,6 +155,7 @@ def menu():
         else:
             input("Invalid choice. Press Enter to continue...")
 
+
 def fake_info():
     print_banner()
     loading()
@@ -191,6 +192,8 @@ def loading():#FYI this part is completely useless, I just added it cause it loo
     time.sleep(.5)
     clear_screen()
     print_banner()
+
+
 def validate_credit_card():
     print_banner()
     card_number = input("Enter Credit Card Number: ")
@@ -199,7 +202,10 @@ def validate_credit_card():
         input("\nPress Enter to continue...")
         return
     formated_number = format_card(card_number)
-    print("\nFormated Credit Card Number:", formated_number)
+    if formated_number != card_number:
+        print("\nFormated Credit Card Number:", formated_number)
+        time.sleep(1.5)
+    loading()
     validation = validate_card(formated_number)
     if validation == True:
         validation_result = "The Credit Card Number is Valid"
