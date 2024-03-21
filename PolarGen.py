@@ -39,7 +39,6 @@ def clear_screen():
 def print_banner():
     clear_screen()
     print(banner)
-
 def folders():
     if not os.path.exists('credit_card_info'):
         os.makedirs('credit_card_info')
@@ -56,26 +55,19 @@ def gen_card():
     print("[3] Discover")
     print("[4] American Express")
     print("[5] Back to Main Menu")
-    
     choice = input("\nChoose a card type or enter '5' to go back: ")
-    
-    
     if choice == '1':
         loading()
         card_info = fake.credit_card_full(card_type="mastercard") 
-    
     elif choice == '2':
         loading()
         card_info = fake.credit_card_full(card_type="visa")
-    
     elif choice == '3':
         loading()
         card_info = fake.credit_card_full(card_type="discover")   
-    
     elif choice == '4':
         loading()
         card_info = fake.credit_card_full(card_type="amex")
-    
     elif choice == '5':
         return
     else:
@@ -105,7 +97,6 @@ def company_info():
     company_email = fake.email()
     company_job = fake.job()
     company_slogen = fake.bs()
-
     print("Company Name:", company_name)
     time.sleep(.4)
     print("Company Job:", company_job)
