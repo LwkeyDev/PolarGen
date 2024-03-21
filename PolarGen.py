@@ -23,7 +23,7 @@ banner = '''
                              _|    \___/  _| \__,_| _|    \____| \___| _|  _| 
                                                                                                                
                                            {Author: Lwkey}
-                                           {Version: 2.4.9}
+                                           {Version: 2.4.10}
                         
                    [Disclaimer: This tool is for educational purposes only, the credit card]
                    [generator does not generate cards with money on them, and instead,     ]
@@ -177,10 +177,23 @@ def menu():
         elif choice == '6':
             credits()
         elif choice == '7':
-            break
+            custom_exit()
         else:
             input("Invalid choice. Press Enter to continue...")
 
+
+
+def custom_exit():
+    print_banner()
+    choice = input(f"\n{lr}Are you sure you would like to exit the program? (y/n): ").lower()
+    if choice == "y" or choice == "ya" or choice == "yes":
+        print("Exiting...")
+        exit()
+    elif choice == "n" or choice == "no" or choice == "nope" or choice == "nah":
+        print(f"{g}Returning...")
+        return menu()
+    else:
+        print(f"{lr}Invalid Selection.  Press Enter to continue...")
 
 def fake_info():
     print_banner()
@@ -244,7 +257,9 @@ def help_menu():
     faded_help_menu = fade.water(help_menu_text)
     print(faded_help_menu)
     choice = input("\nType would you like to know more about how the generators work (y/n): ").lower()
-    if choice == 'y' or 'yes' or 'ya':
+    
+    if choice == 'y' or choice == 'yes' or choice == 'ya':
+
         clear_screen()
         more_details = """
         For generating fake credit card numbers, the script uses an algorithim called Luhns Algorithm.
@@ -259,8 +274,8 @@ def help_menu():
         print(faded_more_details)
         time.sleep(3)
         input(f"\n{lr}Press Enter to continue...")
-
     else:
+        clear_screen()
         input(f"\n{lr}Press Enter to continue...")
 def credits():
     credits_text = """
