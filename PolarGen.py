@@ -163,8 +163,7 @@ def menu():
         """
         faded_menu = fade.water(menu_options)
         print(faded_menu)
-        choice = input("\nSelect an option: ")
-
+        choice = input(f"\n{lb}Select an option: ")
         if choice == '1':
             gen_card()
         elif choice == '2':
@@ -247,31 +246,44 @@ def help_menu():
     choice = input("\nType would you like to know more about how the generators work (y/n): ").lower()
     if choice == 'y' or 'yes' or 'ya':
         clear_screen()
-        print(f"\n{c}For generating fake credit card numbers, the script uses an algorithim called Luhns Algorithm.")
-        print(f"\n{c}This is the same algorithim used to generate real credit card numbers.")
-        print(f"{c}For the CVV/CVC, the script simply picks 3 random numbers in the correct ranges to be valid")
-        print(f"{c}For generating names, experation dates, jobs, etc, the script simply goes through a list of names, jobs, etc")
-        print(f"{c}While the generated cards do not actually have any money on them, they could pass as a real credit card for a free trial")
-        print(f"{c}Using it for paying for free trials, or other things that are not yours is illegal")
-        print(f"{c}We are not responsible for any harm you or others may cause themselves. ")
+        more_details = """
+        For generating fake credit card numbers, the script uses an algorithim called Luhns Algorithm.
+        This is the same algorithim used to generate real credit card numbers.
+        For the CVV/CVC, the script simply picks 3 random numbers in the correct ranges to be valid
+        For generating names, experation dates, jobs, etc, the script simply goes through a list of names, jobs, etc
+        While the generated cards do not actually have any money on them, they could pass as a real credit card for a free trial
+        Using it for paying for free trials, or other things that are not yours is illegal
+        We are not responsible for any harm you or others may cause themselves. 
+        """
+        faded_more_details = fade.purpleblue(more_details)
+        print(faded_more_details)
         time.sleep(3)
         input(f"\n{lr}Press Enter to continue...")
 
     else:
-        input("\nPress Enter to continue...")
+        input(f"\n{lr}Press Enter to continue...")
 def credits():
-    print("Credits:\n")
-    print("Created by Lwkey")
-    print("Libraries for generating information from joke2k")
-    print("Credit Card Validator from adelq")
-    choice = input("\nType 10 for more details about the Author or type 5 to go back to the menu: ")
-    if choice == '10':
-        print("\nWasup, thanks for using PolarGen! Im just a solo dev tryna make his mark on the world of programming.")
-        print("\nFor more details check out my profile at https://github.com/LwkeyDev")
-        print("\nFeel free to leave any comments, suggestions, issues, etc on the issues tab of https://github.com/LwkeyDev/PolarGen")
-        input("\nPress Enter to continue...")
+    credits_text = """
+    Credits:
+    Created by Lwkey
+    Libraries for generating information from joke2k
+    Credit Card Validator from adelq
+    """
+    faded_credits = fade.purpleblue(credits_text)
+    print(faded_credits)
+    choice = input(f"\n{c}Would you like to know more details about the author and project? (y/n): ").lower()
+    if choice == "y" or choice == "yes" or choice == "ya" or choice == "yeah":
+        more_details = """
+        Whats up, thanks for using PolarGen! Im just a solo dev tryna make his mark on the world of programming.
+        For more details check out my profile at https://github.com/LwkeyDev
+        Feel free to leave any suggestions, issues, etc on the issues tab of https://github.com/LwkeyDev/PolarGen
+        """
+        faded_more_details = fade.purpleblue(more_details)
+        print(faded_more_details)
+        time.sleep(1.5)
+        input(f"\n{lr}Press Enter to continue...")
     else:
-        input("\nPress Enter to continue...")
+        input(f"\n{lr}Press Enter to continue...")
         
 
 
