@@ -1,3 +1,5 @@
 faker
 card_identifier
 pystyle
+colorama
+fade
