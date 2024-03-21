@@ -23,7 +23,7 @@ banner = '''
                              _|    \___/  _| \__,_| _|    \____| \___| _|  _| 
                                                                                                                
                                            {Author: Lwkey}
-                                           {Version: 1.7.9}
+                                           {Version: 2.4.9}
                         
                    [Disclaimer: This tool is for educational purposes only, the credit card]
                    [generator does not generate cards with money on them, and instead,     ]
