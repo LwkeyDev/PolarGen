@@ -35,6 +35,7 @@ An open source information generator!
 <br>
 
 #  SCREENSHOT
+-Please note the screenshot may not be the latest version
 <img src='images/PolarGen_v2.4.9.png'>
 
 <br>
