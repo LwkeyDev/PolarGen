@@ -80,6 +80,7 @@ def folders():
         os.makedirs('fake_company_info')
 
 def gen_card():
+    clear_screen()
     print_banner()
     credit_menu = """
     Credit Card Generator
@@ -126,6 +127,7 @@ def gen_card():
 
 
 def company_info():
+    clear_screen()
     print_banner()
     loading()
     print("Company Information:\n")
@@ -196,6 +198,7 @@ def custom_exit():
         print(f"{lr}Invalid Selection.  Press Enter to continue...")
 
 def fake_info():
+    clear_screen()
     print_banner()
     loading()
     print("Generated Fake Personal Information:\n")
@@ -219,6 +222,7 @@ def fake_info():
 
 
 def validate_credit_card():
+    clear_screen()
     print_banner()
     card_number = input(f"{c}Enter Credit Card Number: ")
     if not any(char.isdigit() for char in card_number):
@@ -243,6 +247,7 @@ def validate_credit_card():
     input("\nPress Enter to continue...")
 
 def help_menu():
+    clear_screen()
     print_banner()
     help_menu_text = """
     PolarGen help
@@ -278,6 +283,7 @@ def help_menu():
         clear_screen()
         input(f"\n{lr}Press Enter to continue...")
 def credits():
+    clear_screen()
     credits_text = """
     Credits:
     Created by Lwkey
