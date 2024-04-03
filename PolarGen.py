@@ -17,22 +17,20 @@ banner = '''
 
 
 
-                               _ \         |                ___|              
-                              |   |  _ \   |   _` |   __|  |       _ \  __ \  
-                              ___/  (   |  |  (   |  |     |   |   __/  |   | 
-                             _|    \___/  _| \__,_| _|    \____| \___| _|  _| 
-                                                                                                               
-                                           {Author: Lwkey}
-                                           {Version: 2.4.10}
-                        
-                   [Disclaimer: This tool is for educational purposes only, the credit card]
-                   [generator does not generate cards with money on them, and instead,     ]
-                   [simply generates a valid credit card number, that passes as a real card]
-                   [and can be used for free trials instead of having to put a real credit ]
-                   [card.  Using it for free trials and other payments are highly illegal  ]
-                   [and you should only be using this for testing your own security, or for]
-                   [educational purposes.  We are not responsible for anything you choose  ]
-                   [to do with this tool, and any trouble you may get into.                ]
+
+
+                                      _ \         |                ___|              
+                                     |   |  _ \   |   _` |   __|  |       _ \  __ \  
+                                     ___/  (   |  |  (   |  |     |   |   __/  |   | 
+                                    _|    \___/  _| \__,_| _|    \____| \___| _|  _| 
+                                                                                                                  
+                                                  {Author: Lwkey}
+                                                  {Version: 3.0.1}
+   
+   
+   
+                                             {The Ultimate Info Generator}
+
                     
 '''
 
@@ -68,17 +66,18 @@ def clear_screen():
 
 def print_banner():
     clear_screen()
-    faded_banner = fade.water(banner)
+    faded_banner = fade.purpleblue(banner)
     print(faded_banner)
 
 def folders():
-    if not os.path.exists('credit_card_info'):
-        os.makedirs('credit_card_info')
-    if not os.path.exists('fake_personal_info'):
-        os.makedirs('fake_personal_info')
-    if not os.path.exists('fake_company_info'):
-        os.makedirs('fake_company_info')
-
+    if not os.path.exists("credit_card_info"):
+        os.makedirs("credit_card_info")
+    if not os.path.exists("fake_personal_info"):
+        os.makedirs("fake_personal_info")
+    if not os.path.exists("fake_company_info"):
+        os.makedirs("fake_company_info")
+    if not os.path.exists("credit_card_mass_generator"):
+        os.makedirs("credit_card_mass_generator")
 def gen_card():
     clear_screen()
     print_banner()
@@ -155,13 +154,16 @@ def menu():
     while True:
         print_banner()
         menu_options = """
-        [1] Generate Credit Card
-        [2] Generate Fake Personal Info
-        [3] Validate Credit Card
-        [4] Generate Fake Company Info
-        [5] Help
-        [6] Credits
-        [7] Exit
+        
+                                      
+                         ╠═════════════════════════════════════════════════════════════════════╣       
+                         ║                                                                     ║      
+                         ║ [1] Credit Card     [2] Validate Card     [3] Mass Gen Credit Cards ║     
+                         ║                                                                     ║      
+                         ║ [4] Fake Company Info     [5] Fake personal info     [6] Exit       ║     
+                         ╚                                                                     ╝    
+                         
+                        
         """
         faded_menu = fade.water(menu_options)
         print(faded_menu)
@@ -169,16 +171,14 @@ def menu():
         if choice == '1':
             gen_card()
         elif choice == '2':
-            fake_info()
-        elif choice == '3':
             validate_credit_card()
+        elif choice == '3':
+            mass_credits()
         elif choice == '4':
             company_info()
         elif choice == '5':
-            help_menu()
+            fake_info()
         elif choice == '6':
-            credits()
-        elif choice == '7':
             custom_exit()
         else:
             input("Invalid choice. Press Enter to continue...")
@@ -219,8 +219,6 @@ def fake_info():
         print(f"Fake personal information saved to '{filename}'")
     input("\nPress Enter to continue...")
 
-
-
 def validate_credit_card():
     clear_screen()
     print_banner()
@@ -246,65 +244,49 @@ def validate_credit_card():
     time.sleep(1)
     input("\nPress Enter to continue...")
 
-def help_menu():
+
+
+def mass_credits():
     clear_screen()
     print_banner()
-    help_menu_text = """
-    PolarGen help
-    This script allows you to
-    - Generate fake credit card numbers
-    - Generate fake personal information
-    - Validate credit card numbers
-    - Generate fake company information
-    - Save generated information to a file
-    Feel free to leave any suggestions, issues, questions, etc on the issues tab of https://github.com/LwkeyDev/PolarGen
+    credit_menu = """
+    Mass Credit Card Generator
+    [1] MasterCard
+    [2] Visa
+    [3] Discover
+    [4] American Express
+    [5] Back to Main Menu
     """
-    faded_help_menu = fade.water(help_menu_text)
-    print(faded_help_menu)
-    choice = input("\nType would you like to know more about how the generators work (y/n): ").lower()
-    
-    if choice == 'y' or choice == 'yes' or choice == 'ya':
+    faded_credit_menu = fade.purpleblue(credit_menu)
+    print(faded_credit_menu)
+    choice = input("\nChoose a card type or enter '5' to go back: ")
+    if choice == '1':
+        card_type = "mastercard"
+    elif choice == '2':
+        card_type = "visa"
+    elif choice == '3':
+        card_type = "discover"   
+    elif choice == '4':
+        card_type = "amex"
+    elif choice == '5':
+        return
+    else:
+        input("Invalid choice. Press Enter to continue...")
+        mass_credits()
+        
+    num_cards = int(input(f"\n{c}How many cards would you like to generate: "))
 
-        clear_screen()
-        more_details = """
-        For generating fake credit card numbers, the script uses an algorithim called Luhns Algorithm.
-        This is the same algorithim used to generate real credit card numbers.
-        For the CVV/CVC, the script simply picks 3 random numbers in the correct ranges to be valid
-        For generating names, experation dates, jobs, etc, the script simply goes through a list of names, jobs, etc
-        While the generated cards do not actually have any money on them, they could pass as a real credit card for a free trial
-        Using it for paying for free trials, or other things that are not yours is illegal
-        We are not responsible for any harm you or others may cause themselves. 
-        """
-        faded_more_details = fade.purpleblue(more_details)
-        print(faded_more_details)
-        time.sleep(3)
-        input(f"\n{lr}Press Enter to continue...")
-    else:
-        clear_screen()
-        input(f"\n{lr}Press Enter to continue...")
-def credits():
-    clear_screen()
-    credits_text = """
-    Credits:
-    Created by Lwkey
-    Libraries for generating information from joke2k
-    Credit Card Validator from adelq
-    """
-    faded_credits = fade.purpleblue(credits_text)
-    print(faded_credits)
-    choice = input(f"\n{c}Would you like to know more details about the author and project? (y/n): ").lower()
-    if choice == "y" or choice == "yes" or choice == "ya" or choice == "yeah":
-        more_details = """
-        Whats up, thanks for using PolarGen! Im just a solo dev tryna make his mark on the world of programming.
-        For more details check out my profile at https://github.com/LwkeyDev
-        Feel free to leave any suggestions, issues, etc on the issues tab of https://github.com/LwkeyDev/PolarGen
-        """
-        faded_more_details = fade.purpleblue(more_details)
-        print(faded_more_details)
-        time.sleep(1.5)
-        input(f"\n{lr}Press Enter to continue...")
-    else:
-        input(f"\n{lr}Press Enter to continue...")
+    file_choice = input("\nWhat do you want to name the file: ")
+    filename = os.path.join('credit_card_mass_generator', f'{file_choice}.txt')
+    with open(filename, 'a') as f:
+        for i in range(1, num_cards + 1):
+            card_info = fake.credit_card_full(card_type=card_type) 
+            f.write(f"[{i}] {card_info}\n\n")
+        loading()
+        print(f"{c}{num_cards} cards have been successfully saved to '{filename}'")
+    
+    input(f"{lr}\nPress Enter to continue...")
+
         
 
 
